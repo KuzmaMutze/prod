@@ -1,17 +1,17 @@
 import { Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
+import { classNames } from './helpers/classNames';
 import { AboutPageLazy } from './pages/AboutPage/AboutPage.laze';
 import { MainPageLazy } from './pages/MainPage/MainPage.lazy';
 import './sass/index.scss';
-import { Theme } from './theme/ThemeContext';
 import { useTheme } from './theme/ThemeProvider';
 
 export function App() {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={'app ' + theme}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={() => toggleTheme()}>{theme}</button>
             <Link to="/">Main</Link>
             <Link to="/about">About</Link>2
