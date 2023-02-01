@@ -1,11 +1,11 @@
 import { Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
-import { classNames } from './helpers/classNames';
-import { AboutPageLazy } from './pages/AboutPage/AboutPage.laze';
-import { MainPageLazy } from './pages/MainPage/MainPage.lazy';
+import { classNames } from 'shared/lib';
+import { AboutPageLazy } from 'pages/AboutPage';
+import { MainPageLazy } from 'pages/MainPage';
 import './sass/index.scss';
-import { useTheme } from './theme/ThemeProvider';
+import { useTheme } from './providers/ThemeProvider';
 
 export function App() {
     const { theme, toggleTheme } = useTheme();
