@@ -1,14 +1,18 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
-import { BuildOptions, BuildPaths } from './types/config';
+import { BuildPaths } from './types/config';
 
-export function buildPlugins(path: BuildPaths['html']) {
+export function buildPlugins(paths: BuildPaths) {
     return [
         new HtmlWebpackPlugin({
             title: 'Production Project',
-            template: path,
+            template: paths.html,
         }),
         new webpack.ProgressPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css',
+        }),
     ];
 }
