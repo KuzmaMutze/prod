@@ -1,12 +1,12 @@
 import React from 'react';
 import { classNames } from 'shared/lib';
 import { AppLink, ColorAppLink } from 'shared/ui';
-import cls from './NavBar.module.scss';
+import cls from './Navbar.module.scss';
 
-interface NavBarProps {
+interface NavbarProps {
     className?: string;
 }
-export const NavBar: React.FC<NavBarProps> = ({ className }) => {
+export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <div className={cls.links}>
