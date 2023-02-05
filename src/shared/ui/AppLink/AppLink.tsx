@@ -11,16 +11,16 @@ export enum ColorAppLink {
 
 interface AppLinkProps extends LinkProps {
     className?: string;
-    color?: ColorAppLink;
+    colorScheme?: ColorAppLink;
 }
 export const AppLink: React.FC<AppLinkProps> = (props) => {
-    const { to, className, children, color, ...appLinkProps } = props;
+    const { to, className, children, colorScheme, ...appLinkProps } = props;
 
     return (
         <Link
             {...appLinkProps}
             to={to}
-            className={classNames(cls.appLink, {}, [className, cls[color]])}>
+            className={classNames(cls.appLink, {}, [className, cls[colorScheme]])}>
             {children}
         </Link>
     );

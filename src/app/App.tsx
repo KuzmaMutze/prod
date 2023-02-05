@@ -3,13 +3,14 @@ import './sass/index.scss';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 import { NavBar } from 'widgets';
+import { ThemeSwitcher } from 'shared/ui';
 
 export function App() {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button onClick={() => toggleTheme()}>{theme}</button>
+            <ThemeSwitcher />
             <NavBar />
             <AppRouter />
         </div>
