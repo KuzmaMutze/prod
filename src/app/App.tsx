@@ -1,18 +1,22 @@
 import { classNames } from 'shared/lib';
 import './sass/index.scss';
+import { Navbar, Sidebar } from 'widgets';
+import { Suspense } from 'react';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
-import { Navbar } from 'widgets';
-import { ThemeSwitcher } from 'shared/ui';
 
 export function App() {
-    const { theme } = useTheme();
+  const { theme } = useTheme();
 
-    return (
-        <div className={classNames('app', {}, [theme])}>
-            <ThemeSwitcher />
-            <Navbar />
-            <AppRouter />
+  return (
+    <div className={classNames('app', {}, [theme])}>
+      <Suspense fallback="Loading">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
         </div>
-    );
+      </Suspense>
+    </div>
+  );
 }
