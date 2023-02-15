@@ -4,13 +4,14 @@ import { Navbar, Sidebar } from 'widgets';
 import { Suspense } from 'react';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
+import { Loader } from 'shared/ui';
 
 export function App() {
   const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="Loading">
+      <Suspense fallback={<Loader />}>
         <Navbar />
         <div className="content-page">
           <Sidebar />
