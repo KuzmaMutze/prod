@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { classNames } from 'shared/lib';
-import { ThemeSwitcher, LangSwitcher } from 'shared/ui';
+import { ThemeSwitcher, LangSwitcher, Button } from 'shared/ui';
 import cls from './Sidebar.module.scss';
 
 interface SidebarType {
@@ -16,11 +16,14 @@ export const Sidebar: React.FC<SidebarType> = (props) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
         className,
       ])}
     >
-      <button onClick={onToggle}>Toggle</button>
+      <Button data-testid="sidebar-toggle" onClick={onToggle}>
+        Toggle
+      </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
