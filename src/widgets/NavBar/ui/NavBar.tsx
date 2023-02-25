@@ -1,4 +1,3 @@
-import React from 'react';
 import { classNames } from 'shared/lib';
 import { AppLink, ColorAppLink } from 'shared/ui';
 import cls from './Navbar.module.scss';

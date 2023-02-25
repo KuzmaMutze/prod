@@ -1,5 +1,4 @@
 import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import React from 'react';
 import { classNames } from 'shared/lib';
 import SunIcon from 'shared/assets/icons/theme-light.svg';
 import MoonIcon from 'shared/assets/icons/theme-dark.svg';
