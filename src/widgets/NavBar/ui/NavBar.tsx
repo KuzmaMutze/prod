@@ -9,9 +9,9 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => (
   <div className={classNames(cls.navbar, {}, [className])}>
     <div className={cls.links}>
       <AppLink color={ColorAppLink.SECONDARY} className={cls.mainLink} to="/">
-        Main
+        {/* Main */}
       </AppLink>
-      <AppLink to="/about">About</AppLink>
+      <AppLink to="/about">{/* About */}</AppLink>
     </div>
   </div>
 );
