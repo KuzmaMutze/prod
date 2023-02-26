@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib';
 import './sass/index.scss';
-import { Navbar, Sidebar } from 'widgets';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
