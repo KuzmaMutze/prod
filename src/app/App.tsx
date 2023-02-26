@@ -1,11 +1,10 @@
 import { classNames } from 'shared/lib';
 import './sass/index.scss';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 import { Loader } from 'shared/ui';
+import { Navbar, Sidebar } from 'widgets';
 
 export function App() {
   const { theme } = useTheme();
