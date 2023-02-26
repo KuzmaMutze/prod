@@ -19,11 +19,11 @@ jobs:
           node-version: ${{matrix.node-version}}
       - name: install modules
         run: npm ci
-      - name: build prod project
-        run: npm run build:prod
       - name: lint code
         run: npm run lint
       - name: lint css
         run: npm run lint:style
+      - name: build prod project
+        run: npm run build:prod
       - name: unit tests
         run: npm run test:unit

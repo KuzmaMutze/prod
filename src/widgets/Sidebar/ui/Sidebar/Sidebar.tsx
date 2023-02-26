@@ -21,9 +21,7 @@ export const Sidebar: React.FC<SidebarType> = (props) => {
         className,
       ])}
     >
-      <Button data-testid="sidebar-toggle" onClick={onToggle}>
-        Toggle
-      </Button>
+      <Button data-testid="sidebar-toggle" onClick={onToggle}></Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
