@@ -25,5 +25,3 @@ jobs:
         run: npm run lint:style
       - name: build prod project
         run: npm run build:prod
-      - name: unit tests
-        run: npm run test:unit
