@@ -4,8 +4,12 @@ import { Button, ColorButton } from '../Button/Button';
 
 interface LangSwitcherProps {
   className?: string;
+  short: boolean;
 }
-export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
+export const LangSwitcher: React.FC<LangSwitcherProps> = ({
+  className,
+  short,
+}) => {
   const { t, i18n } = useTranslation();
 
   const toggle = async () => {
@@ -18,7 +22,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
       className={classNames('', {}, [className])}
       onClick={toggle}
     >
-      {t('Язык')}
+      {short && t('Язык')}
     </Button>
   );
 };
