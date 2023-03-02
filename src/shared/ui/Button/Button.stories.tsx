@@ -26,6 +26,12 @@ Clear.args = {
   theme: ColorButton.CLEAR,
 };
 
+export const ClearInverted = Template.bind({});
+Clear.args = {
+  children: 'Text',
+  theme: ColorButton.CLEAR_INVERTED,
+};
+
 export const Outline = Template.bind({});
 Outline.args = {
   children: 'Text',
@@ -87,4 +93,3 @@ SquareSizeXl.args = {
   square: true,
   size: ButtonSize.XL,
 };
-

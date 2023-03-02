@@ -11,6 +11,7 @@ import {
   ButtonSize,
   ColorButton,
   LangSwitcher,
+  Modal,
   ThemeSwitcher,
 } from 'shared/ui';
 
