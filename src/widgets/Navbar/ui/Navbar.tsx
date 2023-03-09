@@ -1,7 +1,7 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib';
-import { AppLink, Button, ColorAppLink, ColorButton, Modal } from 'shared/ui';
+import { Button, ColorButton, Modal } from 'shared/ui';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
