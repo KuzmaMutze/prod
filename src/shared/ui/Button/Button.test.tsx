@@ -13,4 +13,3 @@ describe('Button', () => {
     screen.debug();
   });
 });
-
