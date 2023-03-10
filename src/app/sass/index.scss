@@ -7,10 +7,14 @@ body {
   font-family: var(--font-family-main);
 }
 
-.app {
+.app,
+.app_modal {
   font: var(--font-m);
-  background: var(--bg-color);
   color: var(--primary-color);
+}
+
+.app {
+  background: var(--bg-color);
   min-height: 100vh;
 }
 

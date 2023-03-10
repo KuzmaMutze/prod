@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --env port=3000 --env production",
+    "dev": "webpack serve --env port=4444 --env production",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint": "eslint \"**/*.{ts,tsx}\" --fix",
@@ -114,4 +114,3 @@
     }
   }
 }
-
