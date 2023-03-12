@@ -1,6 +1,9 @@
-import fs from 'fs';
-import jsonServer from 'json-server';
-import path from 'path';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const fs = require('fs');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const jsonServer = require('json-server');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 
 const server = jsonServer.create();
 

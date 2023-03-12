@@ -9,7 +9,7 @@ interface StoreProviderProps {
   initialState?: DeepPartial<StateSchema>;
 }
 
-export const StoreProdiver = (props: StoreProviderProps) => {
+export const StoreProvider = (props: StoreProviderProps) => {
   const { children, initialState } = props;
   const store = createReduxStore(initialState as StateSchema);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

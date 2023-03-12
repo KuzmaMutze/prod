@@ -11,7 +11,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useTheme();
   return (
     <Button
-      colorScheme={ColorButton.CLEAR}
+      theme={ColorButton.CLEAR}
       className={classNames('', {}, [className])}
       onClick={() => toggleTheme()}
     >

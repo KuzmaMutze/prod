@@ -11,7 +11,6 @@ import {
   ButtonSize,
   ColorButton,
   LangSwitcher,
-  Modal,
   ThemeSwitcher,
 } from 'shared/ui';
 
@@ -38,7 +37,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
         data-testid="sidebar-toggle"
         onClick={onToggle}
         className={cls.collapseBtn}
-        colorScheme={ColorButton.BACKGROUND_INVERTED}
+        theme={ColorButton.BACKGROUND_INVERTED}
         size={ButtonSize.L}
         square
       >
@@ -46,7 +45,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       </Button>
       <div className={cls.items}>
         <AppLink
-          colorScheme={ColorAppLink.SECONDARY}
+          theme={ColorAppLink.SECONDARY}
           to={RoutePath.main}
           className={cls.item}
         >
@@ -54,7 +53,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
           <span className={cls.link}>{t('Главная')}</span>
         </AppLink>
         <AppLink
-          colorScheme={ColorAppLink.SECONDARY}
+          theme={ColorAppLink.SECONDARY}
           to={RoutePath.about}
           className={cls.item}
         >

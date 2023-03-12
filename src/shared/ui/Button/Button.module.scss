@@ -3,6 +3,9 @@
   color: var(--primary-color);
   padding: 6px 15px;
 }
+.Button:disabled {
+  opacity: 0.5;
+}
 
 .clear,
 .clearInverted {
