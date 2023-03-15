@@ -1,18 +1,24 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
-import { StateSchema } from './config/StateSchema';
-import { createReduxStore } from './config/store';
+import { createReduxStore } from 'app/providers/StoreProvider/config/store';
+import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 
 interface StoreProviderProps {
   children?: ReactNode;
   initialState?: DeepPartial<StateSchema>;
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
-  const { children, initialState } = props;
-  const store = createReduxStore(initialState as StateSchema);
+  const { children, initialState, asyncReducers } = props;
+
+  const store = createReduxStore(
+    initialState as StateSchema,
+    asyncReducers as ReducersMapObject<StateSchema>
+  );
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore TODO: FIX
+  //@ts-ignore TODO: incorrect type ReactNode, but is JSX
   return <Provider store={store}>{children}</Provider>;
 };

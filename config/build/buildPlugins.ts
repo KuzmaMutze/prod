@@ -26,7 +26,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions) {
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(
       new BundleAnalyzerPlugin({
-        openAnalyzer: false,
+        openAnalyzer: true,
       })
     );
   }
