@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, ColorButton, Input, Text, TextTheme } from 'shared/ui';
 import { getLoginState } from '../model/selectors/getLoginState';
 import { loginByUsername } from '../model/services/loginByUsername/loginByUsername';
-import { loginFormAcions, loginFormReducer } from '../model/slice/loginSlice';
+import { loginFormActions, loginFormReducer } from '../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 
@@ -18,13 +18,13 @@ const LoginForm: React.FC = () => {
 
   const onChangeUsername = useCallback(
     (value: string) => {
-      dispatch(loginFormAcions.setUsername(value));
+      dispatch(loginFormActions.setUsername(value));
     },
     [dispatch]
   );
   const onChangePassword = useCallback(
     (value: string) => {
-      dispatch(loginFormAcions.setPassword(value));
+      dispatch(loginFormActions.setPassword(value));
     },
     [dispatch]
   );

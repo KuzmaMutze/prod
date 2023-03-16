@@ -37,5 +37,5 @@ const loginSlice = createSlice({
   },
 });
 
-export const { actions: loginFormAcions, reducer: loginFormReducer } =
+export const { actions: loginFormActions, reducer: loginFormReducer } =
   loginSlice;
