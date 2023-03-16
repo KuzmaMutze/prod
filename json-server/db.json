@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Kuzma",
+    "lastname": "Mutze",
+    "age": 80,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "Kuzma Mudze",
+    "avatar": "https://preview.redd.it/you-cant-sit-here-bro-v0-p0amfx5xp80a1.jpg?auto=webp&s=be9a183d8200a6a7b6a94d9d20697bd46f350a9d"
+  }
 }
