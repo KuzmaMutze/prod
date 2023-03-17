@@ -14,7 +14,13 @@ interface AppLinkProps extends LinkProps {
   theme?: ColorAppLink;
 }
 export const AppLink: React.FC<AppLinkProps> = memo((props) => {
-  const { to, className, children, theme, ...appLinkProps } = props;
+  const {
+    to,
+    className,
+    children,
+    theme = ColorAppLink.PRIMARY,
+    ...appLinkProps
+  } = props;
 
   return (
     <Link

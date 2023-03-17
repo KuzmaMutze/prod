@@ -2,9 +2,12 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, ColorButton, Input, Text, TextTheme } from 'shared/ui';
-import { getLoginState } from '../model/selectors/getLoginState';
-import { loginByUsername } from '../model/services/loginByUsername/loginByUsername';
-import { loginFormActions, loginFormReducer } from '../model/slice/loginSlice';
+import { getLoginState } from '../../model/selectors/getLoginState';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import {
+  loginFormActions,
+  loginFormReducer,
+} from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -36,8 +39,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const onLoginClick = useCallback(async () => {
     const res = await dispatch(
       loginByUsername({
-        username: loginForm?.username,
-        password: loginForm?.password,
+        username: loginForm?.username ?? '',
+        password: loginForm?.password ?? '',
       })
     );
 

@@ -8,7 +8,7 @@ export const AppRouter: React.FC = () => (
     <Routes>
       {Object.values(routeConfig).map(({ path, element }, i) => (
         <Route
-          key={path + i}
+          key={path}
           path={path}
           element={<div className="page-wrapper">{element}</div>}
         />

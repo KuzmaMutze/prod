@@ -6,6 +6,10 @@
 import path from 'path';
 
 export default {
+  grlobal: {
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify(''),
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
