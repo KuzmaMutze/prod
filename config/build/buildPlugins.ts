@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions) {
+export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions) {
   const plugins = [
     new HtmlWebpackPlugin({
       title: 'Production Project',
@@ -19,6 +19,7 @@ export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions) {
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
   ];
 
@@ -27,7 +28,7 @@ export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions) {
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(
       new BundleAnalyzerPlugin({
-        openAnalyzer: true,
+        openAnalyzer: false,
       })
     );
   }
