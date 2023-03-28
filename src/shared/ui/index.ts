@@ -6,4 +6,6 @@ export { Button, ColorButton, ButtonSize } from './Button/Button';
 export { Modal } from './Modal/Modal';
 export { Portal } from './Portal/Portal';
 export { Input } from './Input/Input';
-export { Text, TextTheme } from './Text/Text';
+export { Avatar } from './Avatar/Avatar';
+export { Text, TextTheme, TextAlign } from './Text/Text';
+export { Select } from './Select/Select';

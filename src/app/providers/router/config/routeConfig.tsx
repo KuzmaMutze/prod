@@ -5,7 +5,11 @@ import { ProfilePageLazy } from 'pages/ProfilePage';
 import { RouteProps } from 'react-router-dom';
 import { AppRoutes, RoutePath } from 'shared/constants/routeConstants';
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export type AppRouteProps = RouteProps & {
+  authOnly?: boolean;
+};
+
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,
     element: <MainPageLazy />,
@@ -17,6 +21,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutePath.profile,
     element: <ProfilePageLazy />,
+    authOnly: true,
   },
   [AppRoutes.PAGE_NOT_FOUND]: {
     path: RoutePath.pageNotFound,
