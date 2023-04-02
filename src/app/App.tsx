@@ -1,31 +1,32 @@
-import { classNames } from 'shared/lib';
-import { Suspense, useEffect } from 'react';
-import { useTheme } from './providers/ThemeProvider';
-import { AppRouter } from './providers/router';
-import { Loader } from 'shared/ui';
-import { Navbar, Sidebar } from 'widgets';
+import React, { Suspense, useEffect } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { AppRouter } from 'app/providers/router';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserInited, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useSelector } from 'react-redux';
 
-export function App() {
-  const { theme } = useTheme();
-  const dispatch = useAppDispatch();
-  const inited = useSelector(getUserInited);
+function App() {
+    const { theme } = useTheme();
+    const dispatch = useDispatch();
+    const inited = useSelector(getUserInited);
 
-  useEffect(() => {
-    dispatch(userActions.initAuthData);
-  }, [dispatch]);
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
-  return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback={<Loader />}>
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {inited && <AppRouter />}
+    return (
+        <div className={classNames('app', {}, [theme])}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    {inited && <AppRouter />}
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  );
+    );
 }
+
+export default App;

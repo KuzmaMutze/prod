@@ -1,37 +1,36 @@
+import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { fetchProfileData } from './fetchProfileData';
-import axios from 'axios';
 
 const data = {
-  username: 'admin',
-  age: 22,
-  country: Country.Ukraine,
-  lastname: 'ulbi tv',
-  first: 'asd',
-  city: 'asf',
-  currency: Currency.USD,
+    username: 'admin',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
 };
-const mockedAxios = jest.mocked(axios, true);
 
 describe('fetchProfileData.test', () => {
-  test('success', async () => {
-    const thunk = new TestAsyncThunk(fetchProfileData, mockedAxios);
-    thunk.api.get.mockReturnValue(Promise.resolve({ data }));
+    test('success', async () => {
+        const thunk = new TestAsyncThunk(fetchProfileData);
+        thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
-    const result = await thunk.callThunk();
+        const result = await thunk.callThunk();
 
-    expect(thunk.api.get).toHaveBeenCalled();
-    expect(result.meta.requestStatus).toBe('fulfilled');
-    expect(result.payload).toEqual(data);
-  });
+        expect(thunk.api.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('fulfilled');
+        expect(result.payload).toEqual(data);
+    });
 
-  test('error login', async () => {
-    const thunk = new TestAsyncThunk(fetchProfileData, mockedAxios);
-    thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk();
+    test('error login', async () => {
+        const thunk = new TestAsyncThunk(fetchProfileData);
+        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
+        const result = await thunk.callThunk();
 
-    expect(result.meta.requestStatus).toBe('rejected');
-  });
+        expect(result.meta.requestStatus).toBe('rejected');
+    });
 });
